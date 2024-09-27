@@ -4,18 +4,14 @@ input = sys.stdin.readline
 
 n = int(input())
 
-for i in range(n):
+for _ in range(n):
     quiz = input().rstrip()
-
-    count = 0
-    score = 0    
+    cnt = 0
+    score = 0
     for i in quiz:
-        if i  == "O":
-            count = count + 1
+        if i == "O":
+            cnt = cnt + 1
+            score = score + cnt
         else:
-            score = score + count * (count + 1) // 2
-            count = 0
-    if (count != 0):
-        score = score + count * (count + 1) // 2
+            cnt = 0
     print(score)
-    
